@@ -1,18 +1,5 @@
-<h1>Edit existing article (id <%= @article.id %>)</h1>
-
-<% if @article.errors.any? %>
-<h2>
-  <%= pluralize(@article.errors.count, "error") %> prohibited
-  this article from being saved:
-</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+<div class="container center title">
+  <h1>Edit existing article <br>(<%= @article.title %>)</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Alpha Blog Articles', controller: 'articles' %> |
-<%= link_to 'Back', articles_path %> 

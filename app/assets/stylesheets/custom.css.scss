@@ -1,8 +1,14 @@
 $navbar-default-bg: #4f5a6b;
 $navbar-default-link-color: #fff;
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: #777;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+th, td {
+  padding: 12px;
+}
 
 #logo {
   float:left;
@@ -33,9 +39,15 @@ $navbar-default-link-color: #fff;
   }
   .btn-xlarge {
     font-size: 1.7em;
-    background-color: black;
+    background-color: #4f5a6b;
   }
 }
+
+.title {
+  text-transform: uppercase;
+}
+
+
 
 footer {
   margin-top: 45px;

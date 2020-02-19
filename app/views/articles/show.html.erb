@@ -1,4 +1,6 @@
-<h1>Showing selected article</h1>
+<div class="container center title">
+  <h1>Showing selected article</h1>
+</div>
 
 <p>Title: <%= @article.title %></p>
 
@@ -6,6 +8,9 @@
   Description: <%= @article.description %>
 </p>
 
-<%= link_to 'Alpha Blog Articles', controller: 'articles' %> |
-<%= link_to 'Back', articles_path %> | 
-<%= link_to 'Edit', edit_article_path(@article) %>
+<div class="col-sm-12">
+  <%= link_to 'Back to Articles', articles_path, class: 'btn btn-primary btn-lg' %>
+  <%= link_to 'Edit', 
+              edit_article_path, class: 'btn btn-warning btn-lg' %>
+</div>
+
