@@ -1,16 +1,18 @@
-<div class="container center title">
-  <h1>Showing selected article</h1>
-</div>
+<h2 class="center">Title: <%= @article.title %></h2>
 
-<p>Title: <%= @article.title %></p>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center description"><strong>Description:</strong></h4>
+  <hr> 
+  <%= simple_format(@article.description) %>
 
-<p>
-  Description: <%= @article.description %>
-</p>
-
-<div class="col-sm-12">
-  <%= link_to 'Back to Articles', articles_path, class: 'btn btn-primary btn-lg' %>
-  <%= link_to 'Edit', 
-              edit_article_path, class: 'btn btn-warning btn-lg' %>
+  <div class="article-actions">
+    <%= link_to 'Edit', 
+                edit_article_path, class: 'btn btn-warning btn-xs' %>
+    <%= link_to 'Delete this article', 
+                article_path(@article), method: :delete, 
+                data: { confirm: "Are you sure you want to delete the article?"}, 
+                class: 'btn btn-danger btn-xs' %>
+    <%= link_to 'View all articles', articles_path, class: 'btn btn-success btn-xs' %>
+  </div>
 </div>
 
