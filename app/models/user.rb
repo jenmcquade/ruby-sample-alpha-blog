@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :articles
+  before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-a]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :username,
             presence: true,
