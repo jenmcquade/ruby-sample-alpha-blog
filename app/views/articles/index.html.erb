@@ -5,17 +5,9 @@
 <div class="center">
   <%= will_paginate %>
 </div>
-<div class="row index-actions">
-  <div class="col-xs-8 col-xs-offset-2">
-    <%= link_to 'New article', new_article_path, class: 'btn btn-primary' %>
-  </div>
-</div>
+<%= render 'new_article_button' %>
 <%= render 'article', obj: @articles %>
-<div class="row index-actions">
-  <div class="col-xs-8 col-xs-offset-2">
-    <%= link_to 'New article', new_article_path, class: 'btn btn-primary' %>
-  </div>
-</div>
+<%= render 'new_article_button' %>
 <div class="center">
   <%= will_paginate %>
 </div>
