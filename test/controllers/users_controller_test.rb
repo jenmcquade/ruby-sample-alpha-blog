@@ -21,7 +21,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get /login' do
-    get '/login'
+    get login_path
     assert_response :success
   end
 
@@ -29,6 +29,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     sign_in_as(@user, 'password')
     follow_redirect!
     assert session[:user_id] == @user.id
+    assert_template 'users/show'
+  end
+
+  test 'should redirect to user page if already logged in' do
+    sign_in_as(@user, 'password')
+    get login_path
+    follow_redirect!
     assert_template 'users/show'
   end
 end
